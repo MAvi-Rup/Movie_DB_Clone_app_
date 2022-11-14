@@ -13,8 +13,8 @@ const Footer = () => {
             <div className="footer__content container">
                 <div className="footer__content__logo">
                     <div className="logo">
-                        <img src={logo} alt="" />
-                        <Link to="/">tMovies</Link>
+                        {/* <img src={logo} alt="" /> */}
+                        <Link to="/">MovieDB</Link>
                     </div>
                 </div>
                 <div className="footer__content__menus">

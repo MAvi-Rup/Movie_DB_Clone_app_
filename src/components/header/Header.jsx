@@ -15,10 +15,10 @@ const headerNav = [
         display: 'Movies',
         path: '/movie'
     },
-    {
-        display: 'TV Series',
-        path: '/tv'
-    }
+    // {
+    //     display: 'TV Series',
+    //     path: '/tv'
+    // }
 ];
 
 const Header = () => {
@@ -46,8 +46,8 @@ const Header = () => {
         <div ref={headerRef} className="header">
             <div className="header__wrap container">
                 <div className="logo">
-                    <img src={logo} alt="" />
-                    <Link to="/">tMovies</Link>
+                    {/* <img src={logo} alt="" /> */}
+                    <Link to="/">MovieDB</Link>
                 </div>
                 <ul className="header__nav">
                     {
