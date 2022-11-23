@@ -15,6 +15,10 @@ const headerNav = [
         display: 'Movies',
         path: '/movie'
     },
+    {
+        display:'Login',
+        path:'/login'
+    }
     // {
     //     display: 'TV Series',
     //     path: '/tv'
