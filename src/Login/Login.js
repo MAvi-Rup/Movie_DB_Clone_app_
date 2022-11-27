@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Loading from '../components/Loading/Loading';
 //import { toast } from 'react-toastify';
 import auth from '../firebase.init';
@@ -21,13 +21,13 @@ const Login = () => {
     let handleError;
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     //const [token] = useToken(user || gUser)
-    const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    //const navigate = Navigate();
+    // const location = useLocation();
+    // let from = location.state?.from?.pathname || "/";
 
-    const navigateRegister = event => {
-        navigate('/register');
-    }
+    // const navigateRegister = event => {
+        
+    // }
     
     if (loading || sending || gLoading) {
         return <Loading></Loading>
@@ -87,7 +87,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-accent text-white">Login</button>
                             </div>
-                            <p className='text-danger italic'>New to Ceramic Tiles? <Link to="/register" className='text-primary no-underline' onClick={navigateRegister}>Please Register</Link> </p>
+                            <p className='text-danger italic'>New to Ceramic Tiles? <Link to="/register" className='text-primary no-underline'>Please Register</Link> </p>
                             <div className="divider">OR</div>
                             <button
                                 onClick={() => signInWithGoogle()}

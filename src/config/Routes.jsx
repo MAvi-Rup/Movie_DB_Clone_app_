@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
 import Detail from '../pages/detail/Detail';
+import Login from '../Login/Login';
 
 const Routes = () => {
     return (
@@ -16,6 +17,10 @@ const Routes = () => {
             <Route
                 path='/:category/:id'
                 component={Detail}
+            />
+            <Route
+                path='/login'
+                component={Login}
             />
             <Route
                 path='/:category'
