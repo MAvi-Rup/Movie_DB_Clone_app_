@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
 import Detail from '../pages/detail/Detail';
 import Login from '../Login/Login';
+import SignUp from './../Login/SignUp';
 
 const Routes = () => {
     return (
@@ -21,6 +22,10 @@ const Routes = () => {
             <Route
                 path='/login'
                 component={Login}
+            />
+            <Route
+                path='/register'
+                component={SignUp}
             />
             <Route
                 path='/:category'

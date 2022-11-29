@@ -3,9 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
-//import auth from '../../firebase.init';
-//import useToken from '../../hooks/useToken';
-//import Loading from '../Shared/Loading';
+import Loading from '../components/Loading/Loading';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -32,15 +30,15 @@ const SignUp = () => {
         console.log('update done');
     }
     return (
-        <div>
+        <div className='mb-5 mt-5 pt-5'>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left md:w-1/2">
-                        <h1 className="text-5xl font-bold">Signup now!</h1>
-                        <p className="py-6">If you don't have an account signup first for place an order to our website. And if you like our design and pattern please subscribe our newsletter to get the latest update price and design.</p>
+                        <h1 className="text-5xl fw-bold">Signup now!</h1>
+                        <p className="py-6">Please Signup to our Movie Server for watch new upcoming and trending movies free.</p>
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="card flex-shrink-0 md:w-1/2 max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
+                    <div onSubmit={handleSubmit(onSubmit)} className="w-50 m-auto">
+                        <div className="ms-2 me-2">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -48,7 +46,7 @@ const SignUp = () => {
                                 <input autoComplete='off'
                                     type="text"
                                     placeholder="Your Name"
-                                    className="input input-bordered w-full max-w-xs"
+                                    className="form-control"
                                     {...register("name", {
                                         required: {
                                             value: true,
@@ -67,7 +65,7 @@ const SignUp = () => {
                                 <input autoComplete='off'
                                 type="email"
                                 placeholder="Your Email"
-                                className="input input-bordered w-full max-w-xs"
+                                className="form-control"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -91,7 +89,7 @@ const SignUp = () => {
                                 <input autoComplete='off'
                                 type="password"
                                 placeholder="Password"
-                                className="input input-bordered w-full max-w-xs"
+                                className="form-control"
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -121,7 +119,7 @@ const SignUp = () => {
                             >Continue with Google</button>
                         </div>
 
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
