@@ -68,7 +68,7 @@ const MovieGrid = props => {
 
     return (
         <>
-            <div className="section mb-3">
+            <div className="section mb-3 mt-5 pt-5 w-100 m-auto">
                 <MovieSearch category={props.category} keyword={keyword}/>
             </div>
             <div className="movie-grid">
@@ -116,8 +116,8 @@ const MovieSearch = props => {
     }, [keyword, goToSearch]);
 
     return (
-        <div className="movie-search">
-            <Input
+        <div className="w-50 d-flex m-auto">
+            <input className='form-control me-2'
                 type="text"
                 placeholder="Enter keyword"
                 value={keyword}
@@ -128,4 +128,4 @@ const MovieSearch = props => {
     )
 }
 
-export default MovieGrid;
+export {MovieGrid, MovieSearch};

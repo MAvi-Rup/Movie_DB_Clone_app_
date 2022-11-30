@@ -7,6 +7,7 @@ import Catalog from '../pages/Catalog';
 import Detail from '../pages/detail/Detail';
 import Login from '../Login/Login';
 import SignUp from './../Login/SignUp';
+import { MovieGrid } from '../components/movie-grid/MovieGrid';
 
 const Routes = () => {
     return (
@@ -26,6 +27,10 @@ const Routes = () => {
             <Route
                 path='/register'
                 component={SignUp}
+            />
+            <Route
+                path='/topmovies'
+                component={MovieGrid}
             />
             <Route
                 path='/:category'

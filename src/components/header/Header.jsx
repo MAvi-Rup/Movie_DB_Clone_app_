@@ -5,6 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import './header.scss';
 
 import logo from '../../assets/tmovie.png';
+import { useAuthState,useSignOut } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const headerNav = [
     {
@@ -15,20 +17,28 @@ const headerNav = [
         display: 'Movies',
         path: '/movie'
     },
-    {
-        display:'Login',
-        path:'/login'
-    }
     // {
-    //     display: 'TV Series',
-    //     path: '/tv'
+    //     display:'Login',
+    //     path:'/login'
     // }
+    {
+        display: 'TV Series',
+        path: '/tv'
+    }
 ];
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+    const [signOut, loading, error] = useSignOut(auth);
 
     const { pathname } = useLocation();
     const headerRef = useRef(null);
+    // const logout = () => {
+    //     useSignOut(auth);
+    // };
+    function logout(){
+        signOut(auth);
+    }
 
     const active = headerNav.findIndex(e => e.path === pathname);
 
@@ -60,9 +70,13 @@ const Header = () => {
                                 <Link to={e.path}>
                                     {e.display}
                                 </Link>
+
                             </li>
                         ))
                     }
+                    <li>{
+                        user ? <Link to="logout" onClick={logout}>{user.displayName} (Logout)</Link> : <Link to="login">Login</Link>
+                    }</li>
                 </ul>
             </div>
         </div>

@@ -2,11 +2,8 @@ import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link} from 'react-router-dom';
 import Loading from '../components/Loading/Loading';
-//import { toast } from 'react-toastify';
 import auth from '../firebase.init';
-//import auth from '../../firebase.init';
-//import useToken from '../../hooks/useToken';
-//import Loading from '../Shared/Loading';
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -42,8 +39,10 @@ const Login = () => {
         const password = passRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
+        console.log("Login Successful")
 
     }
+
 
 
 
